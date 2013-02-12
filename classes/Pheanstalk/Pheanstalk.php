@@ -43,6 +43,14 @@ class Pheanstalk_Pheanstalk
         return $this;
     }
 
+
+    /**
+     * Returns the connection object
+     */
+    public function getConnection()
+    {
+        return $this->_connection;
+    }
     // ----------------------------------------
 
     /**
@@ -358,7 +366,7 @@ class Pheanstalk_Pheanstalk
      * time the client will block on the reserve request until a job becomes
      * available.
      *
-     * Using this method is equivalent to calling watch(), ignore() then 
+     * Using this method is equivalent to calling watch(), ignore() then
      * reserve(), with the added benefit that it will not execute uneccessary
      * WATCH or IGNORE commands if the client is already watching the
      * specified tube.
